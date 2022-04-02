@@ -5,9 +5,7 @@ package com.ensa.gi4.datatabase;
 import com.ensa.gi4.modele.Chaise;
 import com.ensa.gi4.modele.Livre;
 import com.ensa.gi4.modele.Materiel;
-import com.ensa.gi4.service.api.GestionMaterielService;
-import com.ensa.gi4.service.impl.GestionMaterielServiceImpl;
-import org.springframework.context.support.LiveBeansView;
+
 
 import java.util.ArrayList;
 import java.util.List;
