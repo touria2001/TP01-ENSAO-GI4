@@ -118,7 +118,7 @@ for(Materiel m : factory.getListMateriel())
      
   }
 if(a==0) {
-	System.out.println("Cette chaise n'existe pas");
+	System.out.println("il n'existe pas");
 	}
 		
 	}
