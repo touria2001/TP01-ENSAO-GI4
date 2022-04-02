@@ -8,22 +8,22 @@ import com.ensa.gi4.datatabase.Factory;
 import com.ensa.gi4.modele.Chaise;
 import com.ensa.gi4.modele.Livre;
 import com.ensa.gi4.modele.Materiel;
-import com.ensa.gi4.datatabase.Factory;
+
 import com.ensa.gi4.service.api.GestionMaterielService;
 
 import java.util.List;
 import java.util.Scanner;
 public class GestionMaterielServiceImpl implements GestionMaterielService {
-	 private Factory Factory;
+	 private Factory factory;
 	 private static int n=0;
 	  
 
 
-	    public GestionMaterielServiceImpl(Factory Factory){
-	        this.Factory = Factory;
+	    public GestionMaterielServiceImpl(Factory factory){
+	        this.factory = factory;
 	    }
     // bd goes here
-	private Factory factory;
+	
     @Override
     public void init() {
         System.out.println("inititialisation du service");
@@ -32,7 +32,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
     @Override
     public void listerMateriel() {
        // System.out.println("Liste de matériel :\n 3 Livres \n 4 chaises");
-    	for(Materiel m : Factory.getListMateriel())
+    	for(Materiel m : factory.getListMateriel())
         {
             System.out.println(m.getName());
         }
@@ -40,7 +40,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
 
     @Override
     public void ajouterNouveauMateriel(Materiel materiel) {
-    	   List<Materiel> list = Factory.getListMateriel();
+    	   List<Materiel> list = factory.getListMateriel();
     	   System.out.println("voulez vous ajouter chaise ou livre? ");
     	   Scanner scanner = new Scanner(System.in);
            String monMateriel = scanner.next();
@@ -52,7 +52,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
        		materiel.setName(name);
        		materiel.setId(n++);
                list.add(materiel);
-               Factory.setListMateriel(list);
+               factory.setListMateriel(list);
         	   
           }
            else if( monMateriel.equals("livre")) {
@@ -63,7 +63,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
        		materiel.setName(name);
        		materiel.setId(n++);
                list.add(materiel);
-               Factory.setListMateriel(list);
+               factory.setListMateriel(list);
         	   
           }
            
@@ -105,7 +105,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
   Scanner scanner = new Scanner(System.in);
   String next = scanner.next();
   int a=0;
-for(Materiel m : Factory.getListMateriel())
+for(Materiel m : factory.getListMateriel())
   {
       if(m.getId()==id) {
     	  System.out.println("Le nouveau nom : ");
