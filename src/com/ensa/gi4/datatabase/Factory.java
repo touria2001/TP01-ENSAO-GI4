@@ -1,6 +1,6 @@
 package com.ensa.gi4.datatabase;
 
-package com.ensa.gi4.datatabase;
+
 
 import com.ensa.gi4.modele.Chaise;
 import com.ensa.gi4.modele.Livre;
