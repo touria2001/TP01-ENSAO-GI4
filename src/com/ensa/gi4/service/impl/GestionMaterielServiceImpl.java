@@ -1,14 +1,27 @@
 package com.ensa.gi4.service.impl;
 
+
 import java.util.Scanner;
 
 import com.ensa.gi4.datatabase.Factory;
+
 import com.ensa.gi4.modele.Chaise;
 import com.ensa.gi4.modele.Livre;
 import com.ensa.gi4.modele.Materiel;
+import com.ensa.gi4.datatabase.Factory;
 import com.ensa.gi4.service.api.GestionMaterielService;
 
+import java.util.List;
+import java.util.Scanner;
 public class GestionMaterielServiceImpl implements GestionMaterielService {
+	 private Factory Factory;
+	 private static int n=0;
+	  
+
+
+	    public GestionMaterielServiceImpl(Factory Factory){
+	        this.Factory = Factory;
+	    }
     // bd goes here
 	private Factory factory;
     @Override
@@ -18,15 +31,49 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
 
     @Override
     public void listerMateriel() {
-        System.out.println("Liste de matériel :\n 3 Livres \n 4 chaises");
+       // System.out.println("Liste de matériel :\n 3 Livres \n 4 chaises");
+    	for(Materiel m : Factory.getListMateriel())
+        {
+            System.out.println(m.getName());
+        }
     }
 
     @Override
     public void ajouterNouveauMateriel(Materiel materiel) {
-        // à compléter
-        System.out.println("L'ajout du matériel " + materiel.getName() + " effectué avec succès !");
+    	   List<Materiel> list = Factory.getListMateriel();
+    	   System.out.println("voulez vous ajouter chaise ou livre? ");
+    	   Scanner scanner = new Scanner(System.in);
+           String monMateriel = scanner.next();
+           if( monMateriel.equals("chaise")) {
+        	   materiel = new Chaise();
+        	   System.out.println("le nom : ");
+               String name = scanner.next();
+
+       		materiel.setName(name);
+       		materiel.setId(n++);
+               list.add(materiel);
+               Factory.setListMateriel(list);
+        	   
+          }
+           else if( monMateriel.equals("livre")) {
+        	   materiel = new Livre();
+        	   System.out.println("le nom : ");
+               String name = scanner.next();
+
+       		materiel.setName(name);
+       		materiel.setId(n++);
+               list.add(materiel);
+               Factory.setListMateriel(list);
+        	   
+          }
+           
+           else {
+        	   System.out.println("choix invalide");
+           }
+           
     }
     @Override
+
     public void supprimerMateriel(int id) {
     	
     	
@@ -38,7 +85,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
     			if(materiel.getId() == id) {
     				j=1;
     				factory.getListMateriel().remove(i);
-    				System.out.println("votre materiel a bien �t� supprim�");
+    				System.out.println("votre materiel a bien �t� supprim�");
     				break;
     			}
     		}
@@ -52,4 +99,26 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
     	
     	
     }
+
+    public void modifier(int id) {
+	
+  Scanner scanner = new Scanner(System.in);
+  String next = scanner.next();
+  int a=0;
+for(Materiel m : Factory.getListMateriel())
+  {
+      if(m.getId()==id) {
+    	  System.out.println("Le nouveau nom : ");
+    	   next = scanner.next();
+    	   m.setName(next);
+    	   a=1;
+      }
+     
+  }
+if(a==0) {
+	System.out.println("Cette chaise n'existe pas");
+	}
+		
+	}
+
 }
