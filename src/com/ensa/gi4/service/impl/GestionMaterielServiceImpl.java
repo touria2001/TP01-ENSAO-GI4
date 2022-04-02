@@ -39,7 +39,8 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
     }
 
     @Override
-    public void ajouterNouveauMateriel(Materiel materiel) {
+    public void ajouterNouveauMateriel() {
+    	Materiel materiel;
     	   List<Materiel> list = factory.getListMateriel();
     	   System.out.println("voulez vous ajouter chaise ou livre? ");
     	   Scanner scanner = new Scanner(System.in);
@@ -103,7 +104,8 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
     public void modifier(int id) {
 	
   Scanner scanner = new Scanner(System.in);
-  String next = scanner.next();
+  
+  String next ;
   int a=0;
 for(Materiel m : factory.getListMateriel())
   {
