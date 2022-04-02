@@ -9,6 +9,6 @@
     <bean id="gestionMaterielController" class="com.ensa.gi4.controller.GestionMaterielController">
         <property name="gestionMaterielService" ref="gestionMaterielService"/>
     </bean>
-
+<bean id="factory" class="com.ensa.gi4.datatabase.Factory"></bean>
 
 </beans>
