@@ -7,7 +7,7 @@
 
 	<bean id="gestionMaterielService"
 		class="com.ensa.gi4.service.impl.GestionMaterielServiceImpl">
-		<!-- <constructor-arg ref="factory" />-->
+		
 		<constructor-arg ref="materielDaoImpl" />
 	</bean>
 	
