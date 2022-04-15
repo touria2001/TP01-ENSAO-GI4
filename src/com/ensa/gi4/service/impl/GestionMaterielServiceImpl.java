@@ -18,6 +18,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
 	private MaterielDao materielDao;
 	private static int n = 0;
 
+
 	public GestionMaterielServiceImpl(MaterielDao materielDao) {
 		this.materielDao = materielDao;
 	}
@@ -25,6 +26,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
 	@Override
 	public void init() {
 		System.out.println("inititialisation du service");
+
 	}
 
 	@Override
