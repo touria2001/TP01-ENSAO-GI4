@@ -11,7 +11,11 @@ import com.ensa.gi4.modele.Materiel;
 
 public class ListMaterielImpl implements ListMateriel {
 	private  List<Materiel>  listMateriel = new ArrayList<>();
+	
+	
 	public ListMaterielImpl() {}
+	
+	
 	 public ListMaterielImpl(MaterielDaoImpl  materielDaoImpl ) {
 	    }
 	 

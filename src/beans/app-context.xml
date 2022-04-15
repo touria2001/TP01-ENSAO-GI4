@@ -17,7 +17,7 @@
 		<property name="gestionMaterielService"
 			ref="gestionMaterielService" />
 	</bean>
-	<bean id="factory" class="com.ensa.gi4.datatabase.Factory"></bean>
+
 	
 
 </beans>
