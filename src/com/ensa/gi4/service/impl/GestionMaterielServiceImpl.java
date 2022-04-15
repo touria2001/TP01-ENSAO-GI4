@@ -39,7 +39,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
     }
 
     @Override
-    public void ajouterNouveauMateriel() {
+    public  void ajouterNouveauMateriel() {
     	Materiel materiel;
     	   List<Materiel> list = factory.getListMateriel();
     	   System.out.println("voulez vous ajouter chaise ou livre? ");
