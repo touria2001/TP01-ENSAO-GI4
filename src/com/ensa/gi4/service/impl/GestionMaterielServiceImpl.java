@@ -2,6 +2,8 @@ package com.ensa.gi4.service.impl;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.ensa.gi4.datatabase.api.MaterielDao;
 import com.ensa.gi4.modele.Chaise;
@@ -12,13 +14,16 @@ import com.ensa.gi4.service.api.GestionMaterielService;
 
 import java.util.List;
 
+@Component
+
 public class GestionMaterielServiceImpl implements GestionMaterielService {
+	
 	
 
 	private MaterielDao materielDao;
 	private static int n = 0;
 
-
+	@Autowired
 	public GestionMaterielServiceImpl(MaterielDao materielDao) {
 		this.materielDao = materielDao;
 	}

@@ -3,21 +3,21 @@ package com.ensa.gi4.datatabase.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.ensa.gi4.modele.Chaise;
 import com.ensa.gi4.modele.Livre;
 import com.ensa.gi4.modele.Materiel;
 
 
+@Component
 
 public class ListMaterielImpl implements ListMateriel {
 	private  List<Materiel>  listMateriel = new ArrayList<>();
 	
 	
-	public ListMaterielImpl() {}
 	
-	
-	 public ListMaterielImpl(MaterielDaoImpl  materielDaoImpl ) {
-	    }
 	 
 	
 	
