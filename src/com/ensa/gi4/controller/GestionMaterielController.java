@@ -5,6 +5,10 @@ import com.ensa.gi4.service.api.GestionMaterielService;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class GestionMaterielController {
 
     private GestionMaterielService gestionMaterielService;
