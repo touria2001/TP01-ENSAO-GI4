@@ -2,6 +2,7 @@ package com.ensa.gi4.service.impl;
 
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
 
 import com.ensa.gi4.datatabase.api.MaterielDao;
 import com.ensa.gi4.modele.Chaise;
@@ -11,7 +12,7 @@ import com.ensa.gi4.modele.Materiel;
 import com.ensa.gi4.service.api.GestionMaterielService;
 
 import java.util.List;
-
+@Component 
 public class GestionMaterielServiceImpl implements GestionMaterielService {
 	
 

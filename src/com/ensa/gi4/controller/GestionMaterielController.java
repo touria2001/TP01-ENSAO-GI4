@@ -23,6 +23,7 @@ public class GestionMaterielController {
     }
 
     public void afficherMenu() {
+    	
         System.out.println("1- pour lister le matériel, entrer 1");
         System.out.println("2- pour ajouter un nouveau matériel, entrer 2");
         System.out.println("3- pour supprimer matériel, entrer 3");
