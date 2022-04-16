@@ -4,7 +4,8 @@ public enum EventType {
     ADD,
     UPDATE,
     REMOVE,
-    LISTER
+    SHOW,
+    EXIT
 
 
 }
