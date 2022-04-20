@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @SuppressWarnings("all")
-@Configuration
+
 @ComponentScan(basePackages = {"com.ensa.gi4"})
 public class AppGestionMateriel {
  //   private static final ApplicationContext APPLICATION_CONTEXT;
